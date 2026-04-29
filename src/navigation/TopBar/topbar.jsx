@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 function TopBar(){
     return(
     <nav>
+        
         <table>
             <tr>
                 <th><Link to="/styczen">Styczeń</Link></th>
