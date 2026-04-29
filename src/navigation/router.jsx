@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Test from '../pages/test.jsx'
 import Home from '../pages/home.jsx'
 import Styczeń from '../pages/styczen/styczen.jsx'
@@ -16,7 +16,7 @@ import Grudzień from '../pages/grudzien/grudzien.jsx'
 
 function Router() {
   return (
-    <BrowserRouter>
+    <>
       {/* Navigation 
       <nav>
         <Link to="/">Home</Link> |{" "}
@@ -41,7 +41,7 @@ function Router() {
         <Route path="/listopad" element={<Listopad />} />
         <Route path="/grudzien" element={<Grudzień />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 export default Router;

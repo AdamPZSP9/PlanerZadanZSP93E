@@ -1,8 +1,9 @@
 @font-face {
   font-family: 'InstrumentSans';
-  src: local('InstrumentSans'), url(../assets/InstrumentSans.ttf) format('ttf');
+  src: local('InstrumentSans'), url(../../assets/InstrumentSans.ttf) format('truetype');
 }
 nav{
     background-color: #C98CDB;
     font-family: InstrumentSans;
+    font-style: bold;
 }
