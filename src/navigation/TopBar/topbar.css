@@ -5,5 +5,25 @@
 nav{
     background-color: #C98CDB;
     font-family: InstrumentSans;
-    font-style: bold;
+    font-size: large;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center; 
+}
+a{
+  color: #4D2359;
+  text-decoration: none;
+} 
+table{
+  padding: 1rem;
+  margin: auto;
+}
+th{
+  padding: 1rem;
+}
+img{
+  float: left;  
+  width: 6rem;
 }

@@ -1,10 +1,10 @@
 import "./topbar.css"
 import { Link } from 'react-router-dom'
+import logo from "../../assets/logo.png"
 
 function TopBar(){
     return(
     <nav>
-        
         <table>
             <tr>
                 <th><Link to="/styczen">Styczeń</Link></th>
