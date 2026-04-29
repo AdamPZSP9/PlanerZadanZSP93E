@@ -1,6 +1,8 @@
 import "./topbar.css"
+import { Link } from 'react-router-dom'
 
 function TopBar(){
+    return(
     <nav>
         <table>
             <tr>
@@ -19,5 +21,6 @@ function TopBar(){
             </tr>
         </table>
     </nav>
+    )
 }
 export default TopBar;
