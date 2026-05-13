@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'InstrumentSans';
-  src: local('InstrumentSans'), url(../../assets/InstrumentSans.ttf) format('truetype');
+  src: url('InstrumentSans'), url(../../assets/InstrumentSans.ttf) format('truetype');
 }
 nav{
     background-color: #C98CDB;

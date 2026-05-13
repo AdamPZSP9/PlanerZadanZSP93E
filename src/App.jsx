@@ -5,10 +5,15 @@ import './App.css'
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <TopBar/>
+    <main>
+      <h1>Planer Zadań</h1>
       <Router/>
+    </main>
     </BrowserRouter>
+    </>
   )
 }
 
