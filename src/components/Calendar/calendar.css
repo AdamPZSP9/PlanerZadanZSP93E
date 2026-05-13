@@ -1,0 +1,116 @@
+.calendar {
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.calendar__weekday {
+  text-align: center;
+  font-family: var(--font-main);
+  font-weight: bold;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  padding: 6px 0;
+  text-transform: uppercase;
+}
+
+.calendar__weekday--weekend {
+  color: var(--color-weekend);
+}
+
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar__cell {
+  background: var(--color-card-bg);
+  border: 1.5px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  min-height: 100px;
+  padding: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+
+.calendar__cell:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(42, 82, 72, 0.2);
+}
+
+.calendar__cell--outside {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.calendar__cell--outside:hover {
+  border-color: var(--color-card-border);
+  box-shadow: none;
+}
+
+.calendar__cell--today {
+  border-color: var(--color-today-ring);
+  box-shadow: 0 0 0 2px var(--color-today-ring);
+}
+
+.calendar__cell--today:hover {
+  box-shadow: 0 0 0 2px var(--color-today-ring), 0 0 0 4px rgba(197, 127, 212, 0.3);
+}
+
+.cell__day {
+  font-family: var(--font-main);
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+
+.calendar__cell--today .cell__day {
+  color: var(--color-weekend);
+}
+
+.cell__events {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cell__event {
+  font-family: var(--font-main);
+  font-size: 0.68rem;
+  color: #e8e0c8;
+  border-radius: 3px;
+  padding: 1px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.cell__event-time {
+  opacity: 0.8;
+  flex-shrink: 0;
+  font-size: 0.62rem;
+}
+
+.cell__more {
+  font-family: var(--font-main);
+  font-size: 0.65rem;
+  color: var(--color-weekend);
+  font-weight: bold;
+  padding-left: 2px;
+  margin-top: 1px;
+}

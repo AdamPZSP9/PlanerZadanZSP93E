@@ -1,14 +1,62 @@
-@font-face {
-  font-family: 'IosevkaCharonB';
-  src: url('IosevkaCharonB'), url(./assets/IosevkaCharonB.ttf) format('truetype');
+/* =============================================
+   FONT — wklej tutaj @font-face dla IosevkaCharonB
+   np.:
+   @font-face {
+     font-family: 'IosevkaCharon';
+     src: url('./assets/IosevkaCharonB.ttf') format('truetype');
+     font-weight: bold;
+   }
+   ============================================= */
+
+:root {
+  --color-nav-bg: #c57fd4;
+  --color-nav-border: #7b68ee;
+  --color-nav-text: #2d2060;
+
+  --color-main-bg: #8fbcb0;
+
+  --color-card-bg: #e8e0c8;
+  --color-card-border: #8b7355;
+  --color-card-text: #2a5248;
+
+  --color-accent: #2a5248;
+  --color-accent-light: #3a6b5e;
+
+  --color-event-dot: #2d2060;
+  --color-event-text: #1a1a2e;
+
+  --color-today-ring: #c57fd4;
+  --color-weekend: #5a3e6b;
+
+  --font-main: 'IosevkaCharon', 'Courier New', monospace;
+
+  --radius-card: 14px;
+  --radius-sm: 6px;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.15);
 }
-body {
+
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #C5D9D1;
-} 
-main{
-  font-family: IosevkaCharonB;
-  color: #235944;
-  text-align: center;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-main-bg);
+  color: var(--color-card-text);
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
 }

@@ -1,27 +1,37 @@
-import "./topbar.css"
-import { Link } from 'react-router-dom'
-import logo from "../../assets/logo.png"
+import './topbar.css'
 
-function TopBar(){
-    return(
-    <nav>
-        <table>
-            <tr>
-                <th><Link to="/styczen">Styczeń</Link></th>
-                <th><Link to="/luty">Luty</Link></th>
-                <th><Link to="/marzec">Marzec</Link></th>
-                <th><Link to="/kwiecien">Kwiecień</Link></th>
-                <th><Link to="/maj">Maj</Link></th>
-                <th><Link to="/czerwiec">Czerwiec</Link></th>
-                <th><Link to="/lipiec">Lipiec</Link></th>
-                <th><Link to="/sierpien">Sierpień</Link></th>
-                <th><Link to="/wrzesien">Wrzesień</Link></th>
-                <th><Link to="/pazdziernik">Październik</Link></th>
-                <th><Link to="/listopad">Listopad</Link></th>
-                <th><Link to="/grudzien">Grudzień</Link></th>
-            </tr>
-        </table>
-    </nav>
-    )
+const MONTHS = [
+  'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec',
+  'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień',
+]
+
+export default function TopBar({ year, month, onPrev, onNext, view, onViewChange }) {
+  return (
+    <header className="topbar">
+      <span className="topbar__title">Planer Wydarzeń</span>
+
+      {view === 'calendar' && (
+        <nav className="topbar__nav">
+          <button onClick={onPrev}>◀</button>
+          <span className="topbar__month">{MONTHS[month]} {year}</span>
+          <button onClick={onNext}>▶</button>
+        </nav>
+      )}
+
+      <div className="topbar__views">
+        <button
+          className={view === 'calendar' ? 'topbar__view-btn--active' : ''}
+          onClick={() => onViewChange('calendar')}
+        >
+          Kalendarz
+        </button>
+        <button
+          className={view === 'upcoming' ? 'topbar__view-btn--active' : ''}
+          onClick={() => onViewChange('upcoming')}
+        >
+          Nadchodzące
+        </button>
+      </div>
+    </header>
+  )
 }
-export default TopBar;
