@@ -11,6 +11,7 @@ nav{
     left: 0;
     width: 100%;
     text-align: center; 
+    outline: solid 5px #4D2359;
 }
 a{
   color: #4D2359;
