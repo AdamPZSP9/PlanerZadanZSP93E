@@ -5,7 +5,7 @@
   height: 52px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -13,71 +13,9 @@
 
 .topbar__title {
   font-family: var(--font-main);
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--color-nav-text);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.topbar__nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.topbar__nav button {
-  background: none;
-  border: 1.5px solid var(--color-nav-text);
-  border-radius: var(--radius-sm);
-  color: var(--color-nav-text);
-  font-family: var(--font-main);
-  font-weight: bold;
-  font-size: 0.85rem;
-  padding: 4px 12px;
-  transition: background 0.15s, color 0.15s;
-}
-
-.topbar__nav button:hover {
-  background: var(--color-nav-text);
-  color: var(--color-nav-bg);
-}
-
-.topbar__month {
-  font-family: var(--font-main);
-  font-weight: bold;
   font-size: 1rem;
+  font-weight: 700;
   color: var(--color-nav-text);
-  min-width: 160px;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-
-.topbar__views {
-  display: flex;
-  gap: 4px;
-}
-
-.topbar__views button {
-  background: none;
-  border: 1.5px solid var(--color-nav-text);
-  border-radius: var(--radius-sm);
-  color: var(--color-nav-text);
-  font-family: var(--font-main);
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding: 4px 14px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background 0.15s, color 0.15s;
-}
-
-.topbar__views button:hover {
-  background: var(--color-nav-text);
-  color: var(--color-nav-bg);
-}
-
-.topbar__view-btn--active {
-  background: var(--color-nav-text) !important;
-  color: var(--color-nav-bg) !important;
 }

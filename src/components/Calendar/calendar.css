@@ -114,3 +114,123 @@
   padding-left: 2px;
   margin-top: 1px;
 }
+
+.week-view {
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.week-view__headline {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.week-view__hour-label {
+  font-family: var(--font-main);
+  font-weight: bold;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 8px;
+}
+
+.week-view__day {
+  background: var(--color-card-bg);
+  border: 1.5px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.week-view__day--today {
+  border-color: var(--color-today-ring);
+  box-shadow: 0 0 0 2px rgba(197, 127, 212, 0.25);
+}
+
+.week-view__day-name {
+  font-family: var(--font-main);
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.week-view__day-count {
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  color: var(--color-card-border);
+}
+
+.week-view__day-notime {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.week-view__day-notime-item {
+  background: rgba(42, 82, 72, 0.1);
+  color: var(--color-accent);
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 0.68rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.week-view__grid {
+  display: grid;
+  gap: 4px;
+}
+
+.week-view__row {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  gap: 4px;
+  align-items: stretch;
+}
+
+.week-view__cell {
+  min-height: 96px;
+  background: var(--color-card-bg);
+  border: 1.5px solid var(--color-card-border);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.week-view__cell:hover,
+.week-view__day:hover {
+  border-color: var(--color-accent);
+}
+
+.week-view__event {
+  background: var(--color-accent);
+  color: var(--color-card-bg);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 0.78rem;
+  display: block;
+  width: 100%;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.week-view__event-time {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.week-view__event-title {
+  display: block;
+}

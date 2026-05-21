@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './modal.css'
 
 export const CATEGORIES = {
@@ -9,9 +9,15 @@ export const CATEGORIES = {
 
 const EMPTY_FORM = { title: '', time: '', duration: '', category: 'praca' }
 
-export default function DayModal({ date, dateKey, events, onAdd, onDelete, onUpdate, onClose }) {
+export default function DayModal({ date, dateKey, initialTime = '', events, onAdd, onDelete, onUpdate, onClose }) {
   const [form, setForm] = useState(EMPTY_FORM)
   const [editing, setEditing] = useState(null)
+
+  useEffect(() => {
+    if (!editing) {
+      setForm({ ...EMPTY_FORM, time: initialTime || '' })
+    }
+  }, [dateKey, initialTime, editing])
 
   const label = new Intl.DateTimeFormat('pl-PL', {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
@@ -114,13 +120,18 @@ export default function DayModal({ date, dateKey, events, onAdd, onDelete, onUpd
 
           <div className="modal__form-cols">
             <div>
-              <label className="modal__form-label">Godzina</label>
+              <label className="modal__form-label">Godzina (HH:MM)</label>
               <input
                 className="modal__input"
-                type="time"
+                type="text"
                 name="time"
                 value={form.time}
+                placeholder="08:00"
+                pattern="^([01]\d|2[0-3]):[0-5]\d$"
+                inputMode="numeric"
+                maxLength={5}
                 onChange={handleField}
+                title="Wprowadź godzinę w formacie 24-godzinnym, np. 08:30"
               />
             </div>
             <div>

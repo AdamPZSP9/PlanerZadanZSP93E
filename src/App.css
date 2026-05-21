@@ -1,12 +1,4 @@
-/* =============================================
-   FONT — wklej tutaj @font-face dla IosevkaCharonB
-   np.:
-   @font-face {
-     font-family: 'IosevkaCharon';
-     src: url('./assets/IosevkaCharonB.ttf') format('truetype');
-     font-weight: bold;
-   }
-   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Code+Pro:wght@400;600;700&display=swap');
 
 :root {
   --color-nav-bg: #c57fd4;
@@ -28,7 +20,8 @@
   --color-today-ring: #c57fd4;
   --color-weekend: #5a3e6b;
 
-  --font-main: 'IosevkaCharon', 'Courier New', monospace;
+  --font-main: 'Source Code Pro', monospace;
+  --font-alt: 'Inter', sans-serif;
 
   --radius-card: 14px;
   --radius-sm: 6px;
@@ -46,7 +39,7 @@ html, body, #root {
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: var(--font-alt);
   background: var(--color-main-bg);
   color: var(--color-card-text);
   min-height: 100vh;
@@ -59,4 +52,65 @@ button {
 
 input, textarea, select {
   font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.app__controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 14px auto 0;
+  padding: 0 24px;
+}
+
+.app__nav,
+.app__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.app__title {
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.app__controls button,
+.app__export {
+  background: none;
+  border: 1.5px solid var(--color-nav-text);
+  border-radius: var(--radius-sm);
+  color: var(--color-nav-text);
+  font-family: var(--font-main);
+  font-weight: 700;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.app__controls button:hover,
+.app__export:hover {
+  background: var(--color-nav-text);
+  color: var(--color-nav-bg);
+}
+
+.app__action--active {
+  background: var(--color-nav-text);
+  color: var(--color-nav-bg);
+}
+
+.app__main {
+  padding-bottom: 32px;
 }
